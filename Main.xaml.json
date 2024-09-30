@@ -1,0 +1,45 @@
+{
+  "DisplayName": "Main",
+  "Tooltip": null,
+  "HelpLink": null,
+  "Color": null,
+  "OriginalIconFileName": null,
+  "Arguments": [
+    {
+      "Name": "in_MachineNames",
+      "DisplayName": "in_MachineNames",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_MaintenanceMode",
+      "DisplayName": "in_MaintenanceMode",
+      "Category": null,
+      "Tooltip": "True to set maintenanc mode enabled. \r\nFalse to disable it.",
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_ForceKillJobs",
+      "DisplayName": "in_ForceKillJobs",
+      "Category": null,
+      "Tooltip": "True for stop job policy to kill jobs. False to softly stop ongoing process in the machine.",
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    }
+  ]
+}
