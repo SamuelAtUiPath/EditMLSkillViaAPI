@@ -1,0 +1,8 @@
+{
+  "mockedWorkflows": [
+    {
+      "mockFilePath": "Mocks\\Logic\\Logic_SwitchNewstatus_mock.xaml",
+      "sourceWorkflowPath": "Logic\\Logic_SwitchNewstatus.xaml"
+    }
+  ]
+}

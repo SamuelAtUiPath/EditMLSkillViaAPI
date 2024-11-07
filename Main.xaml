@@ -1,22 +1,15 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.in_MLSkillNewStatus="STOPPED" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="in_MachineNames" Type="InArgument(s:String[])" />
-    <x:Property sap2010:Annotation.AnnotationText="True to set maintenanc mode enabled. &#xD;&#xA;False to disable it." Name="in_MaintenanceMode" Type="InArgument(x:Boolean)" />
-    <x:Property sap2010:Annotation.AnnotationText="True for stop job policy to kill jobs. False to softly stop ongoing process in the machine." Name="in_ForceKillJobs" Type="InArgument(x:Boolean)" />
+    <x:Property Name="in_MLSkillName" Type="InArgument(x:String)" />
+    <x:Property Name="in_MLSkillNewStatus" Type="InArgument(x:String)" />
   </x:Members>
-  <this:Main.in_MachineNames>
-    <InArgument x:TypeArguments="s:String[]" />
-  </this:Main.in_MachineNames>
-  <this:Main.in_MaintenanceMode>
-    <InArgument x:TypeArguments="x:Boolean" />
-  </this:Main.in_MaintenanceMode>
-  <this:Main.in_ForceKillJobs>
-    <InArgument x:TypeArguments="x:Boolean" />
-  </this:Main.in_ForceKillJobs>
+  <this:Main.in_MLSkillName>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.in_MLSkillName>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1430.6666666666667,1068</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1268.6666666666667,942</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -123,52 +116,40 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="496,1003.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="416,885.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="AccessToken" />
-      <Variable x:TypeArguments="njl:JObject" Name="SessionsJson" />
-      <Variable x:TypeArguments="njl:JToken[]" Name="WantedSessionsJson" />
+      <Variable x:TypeArguments="x:String" Name="MLSkillId" />
+      <Variable x:TypeArguments="x:String" Name="MLSkillStatus" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Starting main...&quot;]" />
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="API_GetToken - Invoke Workflow File (API_GetToken.xaml)" sap:VirtualizedContainerService.HintSize="434,210" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="API\API_GetToken.xaml">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Starting main...&quot;]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="API_GetToken - Invoke Workflow File (API_GetToken.xaml)" sap:VirtualizedContainerService.HintSize="354,210" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="API\API_GetToken.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Scopes" />
+        <InArgument x:TypeArguments="x:String" x:Key="in_Scopes">AIC.MLSkills.Create AIC.MLSkills.Delete AIC.MLSkills.Edit AIC.MLSkills.View</InArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="out_AccessToken">[AccessToken]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="API_GetListOfMachines - Invoke Workflow File (API\API_GetListOfMachines.xaml)" sap:VirtualizedContainerService.HintSize="434,210" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="API\API_GetListOfMachines.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="API_GetMLSkill - Invoke Workflow File (API\API_GetMLSkill.xaml)" sap:VirtualizedContainerService.HintSize="354,210" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="API\API_GetMLSkill.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_urlParamRuntimeType" />
-        <InArgument x:TypeArguments="x:String" x:Key="in_urlParamFilter" />
-        <InArgument x:TypeArguments="x:String" x:Key="in_urlParamSelect" />
         <InArgument x:TypeArguments="x:String" x:Key="in_AccessToken">[AccessToken]</InArgument>
-        <OutArgument x:TypeArguments="njl:JObject" x:Key="out_SessionsJson">[SessionsJson]</OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_urlParamName">[in_MLSkillName]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_MLSkillsId">[MLSkillId]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_MLSkillStatus">[MLSkillStatus]</OutArgument>
+        <OutArgument x:TypeArguments="njl:JObject" x:Key="out_MLSkillJson" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <Assign DisplayName="Assign - Filter Sessions Json" sap:VirtualizedContainerService.HintSize="434,118" sap2010:WorkflowViewState.IdRef="Assign_1">
-      <Assign.To>
-        <OutArgument x:TypeArguments="njl:JToken[]">[WantedSessionsJson]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="njl:JToken[]" xml:space="preserve">[SessionsJson("value").Where(
-		Function(session) in_MachineNames.Contains(
-			session("HostMachineName").ToString
-		)
-	).DistinctBy(Function(s) s("HostMachineName")
-).ToArray]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="API_SetMaintenanceMode - Invoke Workflow File (API\API_SetMaintenanceMode.xaml)" sap:VirtualizedContainerService.HintSize="434,200.66666666666666" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="API\API_SetMaintenanceMode.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Logic_SwitchNewstatus - Invoke Workflow File (Logic\Logic_SwitchNewstatus.xaml)" sap:VirtualizedContainerService.HintSize="354,200.66666666666666" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Logic\Logic_SwitchNewstatus.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="njl:JToken[]" x:Key="in_SessionsJson">[WantedSessionsJson]</InArgument>
-        <InArgument x:TypeArguments="x:Boolean" x:Key="in_MaintenanceMode">[in_MaintenanceMode]</InArgument>
-        <InArgument x:TypeArguments="x:Boolean" x:Key="in_ForceKillJobs">[in_ForceKillJobs]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_MLSkillNewStatus">[in_MLSkillNewStatus]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_MLSkillName">[in_MLSkillName]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_MLSkillStatus">[MLSkillStatus]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_AccessToken">[AccessToken]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_MLSkillId">[MLSkillId]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>

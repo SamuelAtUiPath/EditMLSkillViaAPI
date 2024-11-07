@@ -1,5 +1,5 @@
 {
-  "name": "MachinesMaintenance",
+  "name": "EditMLSkill",
   "projectId": "bf94fb84-71f5-4ee4-b371-d89ff4707ebd",
   "description": "This process enables to schedule Maintenance sessions for machines",
   "main": "Main.xaml",
@@ -53,24 +53,52 @@
       },
       {
         "editingStatus": "InProgress",
-        "testCaseId": "5a30f0d2-e45e-4970-9f1c-d793319020c7",
-        "testCaseType": "TestCase",
-        "executionTemplateInvokeIsolated": false,
-        "fileName": "API\\API_GetListOfMachines_TestCase.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "ef933aa9-261b-4148-a031-bbc325e3bc9c",
-        "testCaseType": "TestCase",
-        "executionTemplateInvokeIsolated": false,
-        "fileName": "Logic\\Logic_FindMachinesIDs_TestCase.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
         "testCaseId": "0929d3d6-0c3e-445b-b558-e4c012396cb0",
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
         "fileName": "Tests\\Main_TestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "bb426e0d-b9d7-4eed-baa3-bbdb9553449b",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "API\\API_GetMLSkillsList_TestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "cab4316e-dea7-414b-a3a1-4b53da72b8bc",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "API\\API_GetMLSkill_TestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "f6a2e429-3c7a-4b7b-9e51-47018886d403",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "API\\API_SetMLSkillStatus_RESUME_TestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "84d8158b-2c9e-4a05-965f-6362fe6d944e",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "API\\API_SetMLSkillStatus_STOPPED_TestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "68409b26-9461-49fd-926d-4c2f5bd09394",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Logic\\Logic_SwitchNewStatus_TestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "35ebbf50-895b-47b2-a615-5772710b97bf",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Logic\\Logic_SwitchNewStatus_Mock_TestCase.xaml"
       }
     ],
     "saveToCloud": false

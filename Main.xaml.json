@@ -6,8 +6,8 @@
   "OriginalIconFileName": null,
   "Arguments": [
     {
-      "Name": "in_MachineNames",
-      "DisplayName": "in_MachineNames",
+      "Name": "in_MLSkillName",
+      "DisplayName": "in_MLSkillName",
       "Category": null,
       "Tooltip": null,
       "Placeholder": null,
@@ -18,23 +18,11 @@
       "DataSourceItems": null
     },
     {
-      "Name": "in_MaintenanceMode",
-      "DisplayName": "in_MaintenanceMode",
+      "Name": "in_MLSkillNewStatus",
+      "DisplayName": "in_MLSkillNewStatus",
       "Category": null,
-      "Tooltip": "True to set maintenanc mode enabled. \r\nFalse to disable it.",
-      "Placeholder": null,
-      "Widget": null,
-      "IsRequired": false,
-      "IsPrincipal": true,
-      "ArgumentType": 0,
-      "DataSourceItems": null
-    },
-    {
-      "Name": "in_ForceKillJobs",
-      "DisplayName": "in_ForceKillJobs",
-      "Category": null,
-      "Tooltip": "True for stop job policy to kill jobs. False to softly stop ongoing process in the machine.",
-      "Placeholder": null,
+      "Tooltip": null,
+      "Placeholder": "STOPPED",
       "Widget": null,
       "IsRequired": false,
       "IsPrincipal": true,

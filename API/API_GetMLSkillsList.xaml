@@ -1,9 +1,13 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="API_GetToken" this:API_GetToken.in_Scopes="AIC.MLSkills.Create AIC.MLSkills.View AIC.MLSkills.Edit" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="API_GetListFfMachines" this:API_GetListFfMachines.in_urlParamStatus="STOPPED" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="in_Scopes" Type="InArgument(x:String)" />
-    <x:Property Name="out_AccessToken" Type="OutArgument(x:String)" />
+    <x:Property Name="in_AccessToken" Type="InArgument(x:String)" />
+    <x:Property Name="in_urlParamStatus" Type="InArgument(x:String)" />
+    <x:Property Name="out_MLSkillsJson" Type="OutArgument(njl:JObject)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1268.6666666666667,1350.6666666666667</sap:VirtualizedContainerService.HintSize>
+  <this:API_GetListFfMachines.in_AccessToken>
+    <InArgument x:TypeArguments="x:String" />
+  </this:API_GetListFfMachines.in_AccessToken>
+  <sap:VirtualizedContainerService.HintSize>1268.6666666666667,689.3333333333334</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -16,10 +20,6 @@
       <x:String>System.Collections.Generic</x:String>
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Runtime.Serialization</x:String>
-      <x:String>UiPath.Web</x:String>
-      <x:String>UiPath.Platform.ResourceHandling</x:String>
-      <x:String>System.Security</x:String>
-      <x:String>UiPath.Web.Activities</x:String>
       <x:String>System.Activities.Expressions</x:String>
       <x:String>System.Data</x:String>
       <x:String>System.Diagnostics</x:String>
@@ -33,6 +33,10 @@
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
       <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Web</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
       <x:String>System.Linq.Expressions</x:String>
       <x:String>System.Numerics</x:String>
       <x:String>Newtonsoft.Json.Linq</x:String>
@@ -40,7 +44,6 @@
       <x:String>System.Dynamic</x:String>
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Collections.Specialized</x:String>
-      <x:String>System.Net</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -99,40 +102,27 @@
       <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
       <AssemblyReference>System.Collections.Specialized</AssemblyReference>
-      <AssemblyReference>System.Net.Primitives</AssemblyReference>
-      <AssemblyReference>System.Net.HttpListener</AssemblyReference>
-      <AssemblyReference>System.Net.WebProxy</AssemblyReference>
-      <AssemblyReference>System.Net.NameResolution</AssemblyReference>
-      <AssemblyReference>System.Net.WebClient</AssemblyReference>
-      <AssemblyReference>System.Net.Requests</AssemblyReference>
-      <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
-      <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="API_GetToken" sap:VirtualizedContainerService.HintSize="620.6666666666666,1286" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence DisplayName="API_GetListOfMachines" sap:VirtualizedContainerService.HintSize="512,624.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_3">
     <Sequence.Variables>
-      <Variable x:TypeArguments="njl:JObject" Name="ResponseJson" />
+      <Variable x:TypeArguments="x:Int32" Name="StatusCode" />
+      <Variable x:TypeArguments="x:String" Name="Response" />
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="Headers" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="558.6666666666666,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;Getting new access token...&quot;]" />
-    <Sequence DisplayName="Get access Token" sap:VirtualizedContainerService.HintSize="558.6666666666666,913.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_5">
-      <Sequence.Variables>
-        <Variable x:TypeArguments="x:String" Name="ClientId" />
-        <Variable x:TypeArguments="ss:SecureString" Name="ClientSecret" />
-        <Variable x:TypeArguments="x:Int32" Name="StatusCode" />
-        <Variable x:TypeArguments="x:String" Name="Response" />
-      </Sequence.Variables>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;Getting list of machines...&quot;]" />
+    <Sequence DisplayName="Get ML Skills" sap:VirtualizedContainerService.HintSize="450,360" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="AICenter_ExternalApplication" CacheStrategy="None" DisplayName="Get Credential - AI Center Ext App" FolderPath="Italy/Milan" sap:VirtualizedContainerService.HintSize="496.6666666666667,176.66666666666666" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[ClientSecret]" Username="[ClientId]" />
-      <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" sap2010:Annotation.AnnotationText="Get Access Token" AuthenticationType="None" BodyFormat="application/x-www-form-urlencoded" DisplayName="HTTP Request - Get Access Token" EnableSSLVerification="True" EndPoint="https://staging.uipath.com/identity_/connect/token" sap:VirtualizedContainerService.HintSize="496.6666666666667,134.66666666666666" sap2010:WorkflowViewState.IdRef="HttpClient_2" Method="POST" Result="[Response]" StatusCode="[StatusCode]" TimeoutMS="6000">
+      <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" sap2010:Annotation.AnnotationText="Get ML Skills" AuthenticationType="None" BodyFormat="application/xml" DisplayName="HTTP Request - Get ML Skills" EnableSSLVerification="True" EndPoint="[&quot;https://staging.uipath.com/universe/Earth/aifabric_/&quot; + &quot;ai-deployer/v1/mlskills&quot;]" sap:VirtualizedContainerService.HintSize="388,134.66666666666666" sap2010:WorkflowViewState.IdRef="HttpClient_2" Method="GET" ResponseHeaders="[Headers]" Result="[Response]" StatusCode="[StatusCode]" TimeoutMS="6000">
         <ui:HttpClient.Attachments>
           <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
         </ui:HttpClient.Attachments>
@@ -140,17 +130,13 @@
           <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
         </ui:HttpClient.Cookies>
         <ui:HttpClient.Headers>
-          <InArgument x:TypeArguments="x:String" x:Key="Content-Type">application/x-www-form-urlencoded</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="Authorization">[in_AccessToken]</InArgument>
         </ui:HttpClient.Headers>
         <ui:HttpClient.Parameters>
-          <InArgument x:TypeArguments="x:String" x:Key="Parameters">POST</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="client_id">[ClientId]</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="client_secret">[new System.Net.NetworkCredential(string.Empty, ClientSecret).Password]</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="scope">[in_Scopes]</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="grant_type">client_credentials</InArgument>
+          <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
         </ui:HttpClient.Parameters>
         <ui:HttpClient.UrlSegments>
-          <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+          <InArgument x:TypeArguments="x:String" x:Key="status">[in_urlParamStatus]</InArgument>
         </ui:HttpClient.UrlSegments>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -158,21 +144,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:HttpClient>
-      <Switch x:TypeArguments="x:Int32" DisplayName="Switch - Status Code" Expression="[StatusCode]" sap:VirtualizedContainerService.HintSize="496.6666666666667,367.3333333333333" sap2010:WorkflowViewState.IdRef="Switch`1_1">
-        <Switch.Default>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Warn" Message="[&quot;Failed! &quot; + Environment.NewLine + &#xD;&#xA;Response]" />
-        </Switch.Default>
-        <ui:LogMessage x:Key="200" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Status 200! All good!&quot;]" />
-      </Switch>
-      <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonSample="{x:Null}" DisplayName="Deserialize JSON - Response from Get Token" sap:VirtualizedContainerService.HintSize="496.6666666666667,114.66666666666667" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[ResponseJson]" JsonString="[Response]" />
+      <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonSample="{x:Null}" DisplayName="Deserialize JSON - Get Sessions" sap:VirtualizedContainerService.HintSize="388,114.66666666666667" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_2" JsonObject="[out_MLSkillsJson]" JsonString="[Response]" />
     </Sequence>
-    <Assign DisplayName="Assign - Access Token" sap:VirtualizedContainerService.HintSize="558.6666666666666,108" sap2010:WorkflowViewState.IdRef="Assign_1">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[out_AccessToken]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">["Bearer " + ResponseJson("access_token").ToString]</InArgument>
-      </Assign.Value>
-    </Assign>
   </Sequence>
 </Activity>
