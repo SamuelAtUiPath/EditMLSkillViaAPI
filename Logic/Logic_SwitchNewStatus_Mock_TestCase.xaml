@@ -170,7 +170,7 @@
         </TryCatch.Catches>
       </TryCatch>
     </Sequence>
-    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="500.6666666666667,204" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="... Then " sap:VirtualizedContainerService.HintSize="500.6666666666667,204" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
