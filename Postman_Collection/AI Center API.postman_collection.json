@@ -1,0 +1,924 @@
+{
+	"info": {
+		"_postman_id": "cdec7db9-3475-4292-9a1c-27cf81351a59",
+		"name": "AI Center API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33563301"
+	},
+	"item": [
+		{
+			"name": "Get Access Token",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{client_id}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{client_secret}}",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "AIC.MLSkills.Create AIC.MLSkills.View AIC.MLSkills.Edit AIC.MLSkills.Delete",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://staging.uipath.com/identity_/connect/token",
+					"protocol": "https",
+					"host": [
+						"staging",
+						"uipath",
+						"com"
+					],
+					"path": [
+						"identity_",
+						"connect",
+						"token"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Access Token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client_id}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client_secret}}",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "AIC.MLSkills.Create AIC.MLSkills.View AIC.MLSkills.Edit AIC.MLSkills.Delete",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://staging.uipath.com/identity_/connect/token",
+							"protocol": "https",
+							"host": [
+								"staging",
+								"uipath",
+								"com"
+							],
+							"path": [
+								"identity_",
+								"connect",
+								"token"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 11 Nov 2024 16:44:18 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, must-revalidate, no-cache, max-age=0"
+						},
+						{
+							"key": "pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "request-context",
+							"value": "appId=cid-v1:66bc4c50-1753-4f0a-894c-b30f4ac0877c"
+						},
+						{
+							"key": "x-robots-tag",
+							"value": "noindex,nofollow"
+						},
+						{
+							"key": "x-download-options",
+							"value": "noopen"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1"
+						},
+						{
+							"key": "content-security-policy",
+							"value": "default-src 'self';script-src 'self' 'sha256-orD0/VhH8hLqrLxKHD/HUEMdwqX6/0ve7c5hspX5VJ8=' 'sha256-Oq86tfVsa1HMHl5nl/H8koTL2imj+Mpf1N6Buzo3apo=' 'sha256-CNha0nlZ+7meagazBZ2OBvc86pBYRGZqd0dMOhnXE2k=' 'sha256-9N5zYTfBHjMvITkQ0ioSEkwVNuw6PjsJBbu0K5/3KHw=' 'sha256-325n+OsYnYop6KS/HH5624hMH9yBO2g6zFf+49aCY3s=' 'sha256-H3SVZBYrbqBt3ncrT/nNmOb6nwCjC12cPQzh5jnW4Y0=';style-src 'self' 'unsafe-inline' fonts.googleapis.com use.typekit.net p.typekit.net;img-src 'self' data:;font-src 'self' data: fonts.gstatic.com use.typekit.net;connect-src 'self'"
+						},
+						{
+							"key": "x-uipath-targetservice-duration",
+							"value": "17"
+						},
+						{
+							"key": "x-envoy-upstream-service-time",
+							"value": "1519"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15724800; includeSubDomains"
+						},
+						{
+							"key": "X-UiPath-Correlation-ID",
+							"value": "deb3dfd2-5eb4-413c-82bc-6987fdb5f461"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "8e0fbefdfe3f1ac9-GRU"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"eyJhbGciOiJSUzI1NiIsImtpZCI6IkIyRkUzREU5ODdDMkMyMkFGOTE2QjY4QjM5NDBEMTlBQUMwMUU0RUYiLCJ4NXQiOiJzdjQ5NllmQ3dpcjVGcmFMT1VEUm1xd0I1TzgiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3N0YWdpbmcudWlwYXRoLmNvbS9pZGVudGl0eV8iLCJuYmYiOjE3MzEzNDMxNTgsImlhdCI6MTczMTM0MzQ1OCwiZXhwIjoxNzMxMzQ3MDU4LCJhdWQiOiJVaVBhdGguQUlDZW50ZXIiLCJzY29wZSI6WyJBSUMuTUxTa2lsbHMuQ3JlYXRlIiwiQUlDLk1MU2tpbGxzLkRlbGV0ZSIsIkFJQy5NTFNraWxscy5FZGl0IiwiQUlDLk1MU2tpbGxzLlZpZXciXSwic3ViX3R5cGUiOiJzZXJ2aWNlLmV4dGVybmFsIiwicHJ0X2lkIjoiMTNhYjFmN2EtZDMxOC00YTJkLTgyZjUtMmM1ODY2YzBmM2YxIiwiY2xpZW50X2lkIjoiNjM2ODM5ZTItZTFhOS00M2E3LTgwNmEtYTYyNzVjNjlmOWNkIiwianRpIjoiOUY5QTkxQUVGQkE4QUVDNDM1ODk4NkY3QzQxRjVGRDEifQ.cd6kqnPfOX5y-prKSR9G4_aqjM5co4g9HZwCHpH7JfBWfMaI6Joduab2hg3_VbfN38kwwKvnGAcG2yQ6WwhzYSQXBRP8JwBcEZ4CYuc-MGB3gUilLRIZB78gYhl07BGehQxzAJ6CcAu3fFmrNxtifi2URlcJ8_3-ZNHylvgNYoGpUPGVX8rR0zSVP2EV2eEdbG7An1BPGzmWMlLicSZV-dsQCrMLJ2DArAQrDx5rKpLy77rnV7XNSZR8OBYU28QJk7J7vAUrCfYkxElkh7qVvlKGatVoOnf2X0Uow4BbDLe6wGud0HDFUx4il2dV7ih4hhtk4PZmg7AORIYfvbAXLg\",\n    \"expires_in\": 3600,\n    \"token_type\": \"Bearer\",\n    \"scope\": \"AIC.MLSkills.Create AIC.MLSkills.Delete AIC.MLSkills.Edit AIC.MLSkills.View\"\n}"
+				}
+			]
+		},
+		{
+			"name": "View ML Skills",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "scope",
+							"value": "AIC.MLSkills.Create AIC.MLSkills.View AIC.MLSkills.Edit AIC.MLSkills.Delete",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "dc9de8cc-0ee0-4cf1-bfdc-25821b478314",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "172s_!9C?^_fW2hW",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://staging.uipath.com/identity_/connect/token",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "AICenter",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{aifabric_url}}ai-deployer/v1/mlskills",
+					"host": [
+						"{{aifabric_url}}ai-deployer"
+					],
+					"path": [
+						"v1",
+						"mlskills"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "STOPPED",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "PurchaseOrders_MLSkill",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "View ML Skills",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{aifabric_url}}ai-deployer/v1/mlskills",
+							"host": [
+								"{{aifabric_url}}ai-deployer"
+							],
+							"path": [
+								"v1",
+								"mlskills"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "STOPPED",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "PurchaseOrders_MLSkill",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 11 Nov 2024 16:44:09 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "access-control-allow-methods",
+							"value": "GET,POST,DELETE,PUT,OPTIONS,PATCH"
+						},
+						{
+							"key": "access-control-allow-headers",
+							"value": "*"
+						},
+						{
+							"key": "access-control-allow-credentials",
+							"value": "false"
+						},
+						{
+							"key": "access-control-max-age",
+							"value": "600"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "0"
+						},
+						{
+							"key": "pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=31536000 ; includeSubDomains"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "DENY"
+						},
+						{
+							"key": "x-envoy-upstream-service-time",
+							"value": "80"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "X-UiPath-Correlation-ID",
+							"value": "300ee581-3435-4af5-b081-6d578d1f6e7c"
+						},
+						{
+							"key": "RateLimit-Policy",
+							"value": "450000;w=300"
+						},
+						{
+							"key": "RateLimit-Remaining",
+							"value": "449997"
+						},
+						{
+							"key": "RateLimit-Limit",
+							"value": "450000"
+						},
+						{
+							"key": "Request-Context",
+							"value": "appId=cid-v1:66bc4c50-1753-4f0a-894c-b30f4ac0877c"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "8e0fbece6ac01ac9-GRU"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"respCode\": 200,\n    \"respMsg\": \"OK\",\n    \"data\": {\n        \"pageSize\": 10,\n        \"pageNum\": 1,\n        \"totalCount\": 4,\n        \"dataList\": [\n            {\n                \"id\": \"a22fde8d-1f52-4294-a6c5-83ebf8b98290\",\n                \"createdBy\": \"samuel.simao@uipath.com\",\n                \"modifiedBy\": \"samuel.simao@uipath.com\",\n                \"accountId\": \"13ab1f7a-d318-4a2d-82f5-2c5866c0f3f1\",\n                \"tenantId\": \"c0ab9668-3077-4a85-ae18-40b9a28e8c66\",\n                \"organizationId\": \"BaseOrg\",\n                \"createdOn\": \"2024-03-15T14:09:53.446+00:00\",\n                \"modifiedOn\": \"2024-03-15T14:52:34.150+00:00\",\n                \"projectId\": \"b713b0c4-c9d3-448c-be57-d2e1b2c5b755\",\n                \"name\": \"Invoices_MLSkill\",\n                \"mlPackageId\": \"62c3c953-b3c9-444e-94a4-10cb6e16633a\",\n                \"mlPackageName\": \"Invoices_MLPackage\",\n                \"currentVersion\": 151,\n                \"previousVersion\": 0,\n                \"currentTrainingVersion\": 1,\n                \"previousTrainingVersion\": 0,\n                \"currentCustomVersion\": \"23.10.3-5159044\",\n                \"status\": \"FAILED\",\n                \"processor\": \"GPU\",\n                \"source\": \"INTERNAL\",\n                \"description\": \"\",\n                \"predictionCount\": 0,\n                \"inputType\": \"JSON\",\n                \"inputDescription\": \"ML Skills deployed using this ML Package can be integrated into RPA workflows using the Machine Learning Extractor activity in the Official feed or the MLModel activity in Connect feed. File formats accepted include pdf, tiff, jpg or png files. The activities also require an API Key input which you need to obtain from your UiPath Automation Cloud account, in the Licenses -> Other Services view.\",\n                \"outputDescription\": \"Please refer to the documentation of the Activity used to query the ML Skill.\",\n                \"mlPackageVersionId\": \"b203d841-8229-47e9-818e-5d77e045245b\",\n                \"mlSkillVersionId\": \"4bea07a9-48ac-4bf3-9131-e215b83f0366\",\n                \"sourcePackageVersion\": 0,\n                \"sourcePackageTrainingVersion\": 0,\n                \"deploymentStatus\": \"FAILED\",\n                \"mlPackageOwnedByAccountId\": \"13ab1f7a-d318-4a2d-82f5-2c5866c0f3f1\",\n                \"mlPackageOwnedByTenantId\": \"c0ab9668-3077-4a85-ae18-40b9a28e8c66\",\n                \"mlPackageOwnedByProjectId\": \"b713b0c4-c9d3-448c-be57-d2e1b2c5b755\",\n                \"blockedDeployments\": 0,\n                \"blockedGpu\": 0,\n                \"mlPackageLanguageGroup\": \"DU\",\n                \"publicSkill\": false,\n                \"autoUpdate\": false,\n                \"inactivityPeriodInDays\": 1,\n                \"replicas\": 1,\n                \"requestedCPU\": 0.5,\n                \"requestedMemory\": 2,\n                \"limitCPU\": 2,\n                \"limitMemory\": 8\n            },\n            {\n                \"id\": \"76e7a852-dccd-4e2b-bf30-4bc692015d45\",\n                \"createdBy\": \"System\",\n                \"modifiedBy\": \"System\",\n                \"accountId\": \"13ab1f7a-d318-4a2d-82f5-2c5866c0f3f1\",\n                \"tenantId\": \"c0ab9668-3077-4a85-ae18-40b9a28e8c66\",\n                \"organizationId\": \"BaseOrg\",\n                \"createdOn\": \"2024-10-16T14:41:17.728+00:00\",\n                \"modifiedOn\": \"2024-10-16T14:48:49.658+00:00\",\n                \"projectId\": \"3e6944fc-9d1a-4a24-955b-4ab0c0d4bc40\",\n                \"name\": \"Invoices2\",\n                \"mlPackageId\": \"9077c6b9-e37c-4289-af5d-a04ff6e3d71d\",\n                \"mlPackageName\": \"Invoices2\",\n                \"currentVersion\": 173,\n                \"previousVersion\": 0,\n                \"currentTrainingVersion\": 1,\n                \"previousTrainingVersion\": 0,\n                \"currentCustomVersion\": \"24.4.4-6986151\",\n                \"status\": \"STOPPED\",\n                \"processor\": \"CPU\",\n                \"source\": \"INTERNAL\",\n                \"description\": \"\",\n                \"predictionCount\": 0,\n                \"inputType\": \"JSON\",\n                \"mlPackageVersionId\": \"663f0e56-0f2e-4eed-82d9-031473c928c5\",\n                \"mlSkillVersionId\": \"bf5c6995-167b-42ea-99f0-649ee5a456f9\",\n                \"sourcePackageVersion\": 0,\n                \"sourcePackageTrainingVersion\": 0,\n                \"deploymentStatus\": \"UNDEPLOYED\",\n                \"mlPackageOwnedByAccountId\": \"13ab1f7a-d318-4a2d-82f5-2c5866c0f3f1\",\n                \"mlPackageOwnedByTenantId\": \"c0ab9668-3077-4a85-ae18-40b9a28e8c66\",\n                \"mlPackageOwnedByProjectId\": \"3e6944fc-9d1a-4a24-955b-4ab0c0d4bc40\",\n                \"blockedDeployments\": 1,\n                \"blockedGpu\": 0,\n                \"mlPackageLanguageGroup\": \"DU\",\n                \"publicSkill\": true,\n                \"autoUpdate\": false,\n                \"inactivityPeriodInDays\": 7,\n                \"replicas\": 2,\n                \"requestedCPU\": 0.5,\n                \"requestedMemory\": 2,\n                \"limitCPU\": 2,\n                \"limitMemory\": 8\n            },\n            {\n                \"id\": \"a4c4b0e7-7699-47a8-b8c9-91ebb5adde04\",\n                \"createdBy\": \"samuel.simao@uipath.com\",\n                \"modifiedBy\": \"samuel.simao@uipath.com\",\n                \"accountId\": \"13ab1f7a-d318-4a2d-82f5-2c5866c0f3f1\",\n                \"tenantId\": \"c0ab9668-3077-4a85-ae18-40b9a28e8c66\",\n                \"organizationId\": \"BaseOrg\",\n                \"createdOn\": \"2024-04-25T20:40:54.129+00:00\",\n                \"modifiedOn\": \"2024-11-06T18:18:41.601+00:00\",\n                \"projectId\": \"b713b0c4-c9d3-448c-be57-d2e1b2c5b755\",\n                \"name\": \"InvoicesML\",\n                \"mlPackageId\": \"62c3c953-b3c9-444e-94a4-10cb6e16633a\",\n                \"mlPackageName\": \"Invoices_MLPackage\",\n                \"currentVersion\": 151,\n                \"previousVersion\": 0,\n                \"currentTrainingVersion\": 1,\n                \"previousTrainingVersion\": 0,\n                \"currentCustomVersion\": \"23.10.3-5159044\",\n                \"status\": \"STOPPED\",\n                \"processor\": \"CPU\",\n                \"source\": \"INTERNAL\",\n                \"description\": \"\",\n                \"predictionCount\": 6,\n                \"inputType\": \"JSON\",\n                \"inputDescription\": \"ML Skills deployed using this ML Package can be integrated into RPA workflows using the Machine Learning Extractor activity in the Official feed or the MLModel activity in Connect feed. File formats accepted include pdf, tiff, jpg or png files. The activities also require an API Key input which you need to obtain from your UiPath Automation Cloud account, in the Licenses -> Other Services view.\",\n                \"outputDescription\": \"Please refer to the documentation of the Activity used to query the ML Skill.\",\n                \"mlPackageVersionId\": \"b203d841-8229-47e9-818e-5d77e045245b\",\n                \"mlSkillVersionId\": \"090957d0-2288-439d-9226-4ae693106e3f\",\n                \"sourcePackageVersion\": 0,\n                \"sourcePackageTrainingVersion\": 0,\n                \"deploymentStatus\": \"UNDEPLOYED\",\n                \"mlPackageOwnedByAccountId\": \"13ab1f7a-d318-4a2d-82f5-2c5866c0f3f1\",\n                \"mlPackageOwnedByTenantId\": \"c0ab9668-3077-4a85-ae18-40b9a28e8c66\",\n                \"mlPackageOwnedByProjectId\": \"b713b0c4-c9d3-448c-be57-d2e1b2c5b755\",\n                \"blockedDeployments\": 1,\n                \"blockedGpu\": 0,\n                \"mlPackageLanguageGroup\": \"DU\",\n                \"publicSkill\": false,\n                \"autoUpdate\": false,\n                \"inactivityPeriodInDays\": 1,\n                \"replicas\": 1,\n                \"requestedCPU\": 0.5,\n                \"requestedMemory\": 2,\n                \"limitCPU\": 2.01,\n                \"limitMemory\": 8\n            },\n            {\n                \"id\": \"c0e6b82d-ad15-4a2a-9bc9-74ce3619f5de\",\n                \"createdBy\": \"samuel.simao@uipath.com\",\n                \"modifiedBy\": \"ExternalApplication\",\n                \"accountId\": \"13ab1f7a-d318-4a2d-82f5-2c5866c0f3f1\",\n                \"tenantId\": \"c0ab9668-3077-4a85-ae18-40b9a28e8c66\",\n                \"organizationId\": \"BaseOrg\",\n                \"createdOn\": \"2024-03-15T20:29:58.708+00:00\",\n                \"modifiedOn\": \"2024-11-11T16:15:33.634+00:00\",\n                \"projectId\": \"b713b0c4-c9d3-448c-be57-d2e1b2c5b755\",\n                \"name\": \"PurchaseOrders_MLSkill\",\n                \"mlPackageId\": \"8fad99f8-34e6-497f-a4f2-ea30fc6547de\",\n                \"mlPackageName\": \"PurchaseOrders_MLPackage\",\n                \"currentVersion\": 142,\n                \"previousVersion\": 0,\n                \"currentTrainingVersion\": 0,\n                \"previousTrainingVersion\": 0,\n                \"currentCustomVersion\": \"23.10.3-5159044\",\n                \"accessUri\": \"https://ai-stg-b-uipath.deskover.com/mlskills/13ab1f7a-d318-4a2d-82f5-2c5866c0f3f1/c0ab9668-3077-4a85-ae18-40b9a28e8c66/purchaseorders-mlskill\",\n                \"status\": \"AVAILABLE\",\n                \"processor\": \"CPU\",\n                \"source\": \"INTERNAL\",\n                \"description\": \"\",\n                \"predictionCount\": 0,\n                \"inputType\": \"JSON\",\n                \"inputDescription\": \"ML Skills deployed using this ML Package can be integrated into RPA workflows using the Machine Learning Extractor activity in the Official feed or the MLModel activity in Connect feed. File formats accepted include pdf, tiff, jpg or png files. The activities also require an API Key input which you need to obtain from your UiPath Automation Cloud account, in the Licenses -> Other Services view.\",\n                \"outputDescription\": \"Please refer to the documentation of the Activity used to query the ML Skill.\",\n                \"mlPackageVersionId\": \"19e8352a-b4dc-4f5d-a933-b2c0b6a9e91d\",\n                \"mlSkillVersionId\": \"8c6e6f95-8891-48f2-a40c-1eddaf96fb96\",\n                \"sourcePackageVersion\": 0,\n                \"sourcePackageTrainingVersion\": 0,\n                \"deploymentStatus\": \"COMPLETED\",\n                \"mlPackageOwnedByAccountId\": \"13ab1f7a-d318-4a2d-82f5-2c5866c0f3f1\",\n                \"mlPackageOwnedByTenantId\": \"c0ab9668-3077-4a85-ae18-40b9a28e8c66\",\n                \"mlPackageOwnedByProjectId\": \"b713b0c4-c9d3-448c-be57-d2e1b2c5b755\",\n                \"blockedDeployments\": 1,\n                \"blockedGpu\": 0,\n                \"mlPackageLanguageGroup\": \"DU\",\n                \"publicSkill\": false,\n                \"autoUpdate\": false,\n                \"inactivityPeriodInDays\": 7,\n                \"replicas\": 1,\n                \"requestedCPU\": 0,\n                \"requestedMemory\": 0,\n                \"limitCPU\": 0,\n                \"limitMemory\": 0\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Resume ML Skill",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "scope",
+							"value": "AIC.MLSkills.Create AIC.MLSkills.View AIC.MLSkills.Edit AIC.MLSkills.Delete",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "dc9de8cc-0ee0-4cf1-bfdc-25821b478314",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "172s_!9C?^_fW2hW",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://staging.uipath.com/identity_/connect/token",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "AICenter",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"processor\": \"CPU\",\r\n    \"deploymentsRequired\": 1,\r\n    \"gpuRequired\": 0,\r\n    \"publicSkill\": false,\r\n    \"autoUpdate\": false,\r\n    \"inactivityPeriodInDays\": -1,\r\n    \"replicas\": 1,\r\n    \"requestedCPU\": 1.0,\r\n    \"requestedMemory\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{aifabric_url}}ai-deployer/v1/mlskills/{{mlSkillId}}?updateType=RESUME",
+					"host": [
+						"{{aifabric_url}}ai-deployer"
+					],
+					"path": [
+						"v1",
+						"mlskills",
+						"{{mlSkillId}}"
+					],
+					"query": [
+						{
+							"key": "updateType",
+							"value": "RESUME"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Resume ML Skill",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"processor\": \"CPU\",\r\n    \"deploymentsRequired\": 1,\r\n    \"gpuRequired\": 0,\r\n    \"publicSkill\": false,\r\n    \"autoUpdate\": false,\r\n    \"inactivityPeriodInDays\": -1,\r\n    \"replicas\": 1,\r\n    \"requestedCPU\": 1.0,\r\n    \"requestedMemory\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{aifabric_url}}ai-deployer/v1/mlskills/{{mlSkillId}}?updateType=RESUME",
+							"host": [
+								"{{aifabric_url}}ai-deployer"
+							],
+							"path": [
+								"v1",
+								"mlskills",
+								"{{mlSkillId}}"
+							],
+							"query": [
+								{
+									"key": "updateType",
+									"value": "RESUME"
+								}
+							]
+						}
+					},
+					"status": "Accepted",
+					"code": 202,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 11 Nov 2024 16:45:53 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2153"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "access-control-allow-methods",
+							"value": "GET,POST,DELETE,PUT,OPTIONS,PATCH"
+						},
+						{
+							"key": "access-control-allow-headers",
+							"value": "*"
+						},
+						{
+							"key": "access-control-allow-credentials",
+							"value": "false"
+						},
+						{
+							"key": "access-control-max-age",
+							"value": "600"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "0"
+						},
+						{
+							"key": "pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=31536000 ; includeSubDomains"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "DENY"
+						},
+						{
+							"key": "x-envoy-upstream-service-time",
+							"value": "339"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "X-UiPath-Correlation-ID",
+							"value": "a2ced53e-47fb-4730-8389-7860400f1e75"
+						},
+						{
+							"key": "RateLimit-Policy",
+							"value": "450000;w=300"
+						},
+						{
+							"key": "RateLimit-Remaining",
+							"value": "449998"
+						},
+						{
+							"key": "RateLimit-Limit",
+							"value": "450000"
+						},
+						{
+							"key": "Request-Context",
+							"value": "appId=cid-v1:66bc4c50-1753-4f0a-894c-b30f4ac0877c"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "8e0fc155ec1ffb86-POA"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"respCode\": 202,\n    \"respMsg\": \"ML Skill PurchaseOrders_MLSkill updated successfully\",\n    \"data\": {\n        \"id\": \"c0e6b82d-ad15-4a2a-9bc9-74ce3619f5de\",\n        \"createdBy\": \"samuel.simao@uipath.com\",\n        \"modifiedBy\": \"ExternalApplication\",\n        \"accountId\": \"13ab1f7a-d318-4a2d-82f5-2c5866c0f3f1\",\n        \"tenantId\": \"c0ab9668-3077-4a85-ae18-40b9a28e8c66\",\n        \"organizationId\": \"BaseOrg\",\n        \"createdOn\": \"2024-03-15T20:29:58.708+00:00\",\n        \"modifiedOn\": \"2024-11-11T16:45:53.435+00:00\",\n        \"projectId\": \"b713b0c4-c9d3-448c-be57-d2e1b2c5b755\",\n        \"name\": \"PurchaseOrders_MLSkill\",\n        \"mlPackageId\": \"8fad99f8-34e6-497f-a4f2-ea30fc6547de\",\n        \"mlPackageName\": \"PurchaseOrders_MLPackage\",\n        \"currentVersion\": 142,\n        \"previousVersion\": 0,\n        \"currentTrainingVersion\": 0,\n        \"previousTrainingVersion\": 0,\n        \"currentCustomVersion\": \"23.10.3-5159044\",\n        \"accessUri\": \"https://ai-stg-b-uipath.deskover.com/mlskills/13ab1f7a-d318-4a2d-82f5-2c5866c0f3f1/c0ab9668-3077-4a85-ae18-40b9a28e8c66/purchaseorders-mlskill\",\n        \"status\": \"UPDATING\",\n        \"processor\": \"CPU\",\n        \"source\": \"INTERNAL\",\n        \"description\": \"\",\n        \"predictionCount\": 0,\n        \"inputType\": \"JSON\",\n        \"inputDescription\": \"ML Skills deployed using this ML Package can be integrated into RPA workflows using the Machine Learning Extractor activity in the Official feed or the MLModel activity in Connect feed. File formats accepted include pdf, tiff, jpg or png files. The activities also require an API Key input which you need to obtain from your UiPath Automation Cloud account, in the Licenses -> Other Services view.\",\n        \"outputDescription\": \"Please refer to the documentation of the Activity used to query the ML Skill.\",\n        \"mlPackageVersionId\": \"19e8352a-b4dc-4f5d-a933-b2c0b6a9e91d\",\n        \"mlSkillVersionId\": \"8c6e6f95-8891-48f2-a40c-1eddaf96fb96\",\n        \"sourcePackageVersion\": 0,\n        \"sourcePackageTrainingVersion\": 0,\n        \"deploymentStatus\": \"UPDATING\",\n        \"mlPackageOwnedByAccountId\": \"13ab1f7a-d318-4a2d-82f5-2c5866c0f3f1\",\n        \"mlPackageOwnedByTenantId\": \"c0ab9668-3077-4a85-ae18-40b9a28e8c66\",\n        \"mlPackageOwnedByProjectId\": \"b713b0c4-c9d3-448c-be57-d2e1b2c5b755\",\n        \"blockedDeployments\": 1,\n        \"blockedGpu\": 0,\n        \"mlPackageLanguageGroup\": \"DU\",\n        \"publicSkill\": false,\n        \"autoUpdate\": false,\n        \"inactivityPeriodInDays\": 7,\n        \"replicas\": 1,\n        \"requestedCPU\": 0,\n        \"requestedMemory\": 0,\n        \"limitCPU\": 0,\n        \"limitMemory\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Stop ML Skill",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "scope",
+							"value": "AIC.MLSkills.Create AIC.MLSkills.View AIC.MLSkills.Edit AIC.MLSkills.Delete",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "dc9de8cc-0ee0-4cf1-bfdc-25821b478314",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "172s_!9C?^_fW2hW",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://staging.uipath.com/identity_/connect/token",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "AICenter",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{aifabric_url}}ai-deployer/v1/mlskills/stop/{{mlSkillId}}",
+					"host": [
+						"{{aifabric_url}}ai-deployer"
+					],
+					"path": [
+						"v1",
+						"mlskills",
+						"stop",
+						"{{mlSkillId}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Stop ML Skill",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{aifabric_url}}ai-deployer/v1/mlskills/stop/{{mlSkillId}}",
+							"host": [
+								"{{aifabric_url}}ai-deployer"
+							],
+							"path": [
+								"v1",
+								"mlskills",
+								"stop",
+								"{{mlSkillId}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 11 Nov 2024 16:46:42 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "access-control-allow-methods",
+							"value": "GET,POST,DELETE,PUT,OPTIONS,PATCH"
+						},
+						{
+							"key": "access-control-allow-headers",
+							"value": "*"
+						},
+						{
+							"key": "access-control-allow-credentials",
+							"value": "false"
+						},
+						{
+							"key": "access-control-max-age",
+							"value": "600"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "0"
+						},
+						{
+							"key": "pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=31536000 ; includeSubDomains"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "DENY"
+						},
+						{
+							"key": "x-envoy-upstream-service-time",
+							"value": "36"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "X-UiPath-Correlation-ID",
+							"value": "4df271e3-98b8-4b9d-bb36-d866e6eb7167"
+						},
+						{
+							"key": "RateLimit-Policy",
+							"value": "450000;w=300"
+						},
+						{
+							"key": "RateLimit-Remaining",
+							"value": "449998"
+						},
+						{
+							"key": "RateLimit-Limit",
+							"value": "450000"
+						},
+						{
+							"key": "Request-Context",
+							"value": "appId=cid-v1:66bc4c50-1753-4f0a-894c-b30f4ac0877c"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "8e0fc28bcb39fb86-POA"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"respCode\": 200,\n    \"respMsg\": \"OK\",\n    \"data\": \"Stopping MLSkill id c0e6b82d-ad15-4a2a-9bc9-74ce3619f5de\"\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "tokenName",
+				"value": "AI Center API",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "{{client_id}}",
+				"type": "string"
+			},
+			{
+				"key": "clientSecret",
+				"value": "{{client_secret}}",
+				"type": "string"
+			},
+			{
+				"key": "refreshRequestParams",
+				"value": [],
+				"type": "any"
+			},
+			{
+				"key": "tokenRequestParams",
+				"value": [],
+				"type": "any"
+			},
+			{
+				"key": "authRequestParams",
+				"value": [],
+				"type": "any"
+			},
+			{
+				"key": "challengeAlgorithm",
+				"value": "S256",
+				"type": "string"
+			},
+			{
+				"key": "scope",
+				"value": "AIC.MLSkills.Create AIC.MLSkills.View AIC.MLSkills.Edit AIC.MLSkills.Delete",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "client_credentials",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "https://staging.uipath.com/identity_/connect/token",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "client_secret",
+			"value": "CLIENT_SECRET"
+		},
+		{
+			"key": "client_id",
+			"value": "CLIENT_ID"
+		},
+		{
+			"key": "aifabric_url",
+			"value": "AIFABRIC_URL"
+		},
+		{
+			"key": "mlSkillId",
+			"value": "MLSKILL_ID"
+		}
+	]
+}
