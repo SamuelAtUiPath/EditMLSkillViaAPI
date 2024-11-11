@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1268.6666666666667,1053.3333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1356,1053.3333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Logic_SwitchNewStatus_Mock_TestCase_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -98,21 +98,9 @@
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Logic_SwitchNewStatus_Mock_TestCase" sap:VirtualizedContainerService.HintSize="562.6666666666666,988.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="MLSkillId">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">1234-abcd-5678-efgh</Literal>
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:String" Name="AccessToken">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">access_token</Literal>
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:String" Name="Name">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">MLSkill_Name</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="1234-abcd-5678-efgh" Name="MLSkillId" />
+      <Variable x:TypeArguments="x:String" Default="access_token" Name="AccessToken" />
+      <Variable x:TypeArguments="x:String" Default="MLSkill_Name" Name="Name" />
       <Variable x:TypeArguments="s:Exception" Name="excpt" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -142,6 +130,7 @@
               <InArgument x:TypeArguments="x:String" x:Key="in_MLSkillStatus">[CurrentStatus]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_AccessToken">[AccessToken]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_MLSkillId">[MLSkillId]</InArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_StatusChanged" />
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
         </TryCatch.Try>

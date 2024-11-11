@@ -5,8 +5,9 @@
     <x:Property Name="in_MLSkillStatus" Type="InArgument(x:String)" />
     <x:Property Name="in_AccessToken" Type="InArgument(x:String)" />
     <x:Property Name="in_MLSkillId" Type="InArgument(x:String)" />
+    <x:Property Name="out_StatusChanged" Type="OutArgument(x:Boolean)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1268.6666666666667,541.3333333333334</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1356,541.3333333333334</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -115,16 +116,16 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence x:Key="RESUME" DisplayName="RESUME ML Skill" sap:VirtualizedContainerService.HintSize="416,255.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_8">
+      <Sequence x:Key="RESUME" DisplayName="RESUME ML Skill" sap:VirtualizedContainerService.HintSize="592,1430.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <If sap2010:Annotation.AnnotationText="if ML Skill is already available, there is no need to resume it" Condition="[in_MLSkillStatus.Equals(&quot;AVAILABLE&quot;)]" DisplayName="If - ML Skill is already available" sap:VirtualizedContainerService.HintSize="354,102.66666666666667" sap2010:WorkflowViewState.IdRef="If_3">
+        <If sap2010:Annotation.AnnotationText="if ML Skill is already available, there is no need to resume it" Condition="[in_MLSkillStatus.Equals(&quot;AVAILABLE&quot;)]" DisplayName="If - ML Skill is already available" sap:VirtualizedContainerService.HintSize="530,540.6666666666666" sap2010:WorkflowViewState.IdRef="If_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
             </scg:Dictionary>
@@ -151,16 +152,16 @@
             </Sequence>
           </If.Else>
         </If>
-        <If sap2010:Annotation.AnnotationText="ML Skill can be resumed only if it was stopped before." Condition="[in_MLSkillStatus.Equals(&quot;STOPPED&quot;)]" DisplayName="If - ML Skill is Stopped, then resume it" sap:VirtualizedContainerService.HintSize="354,93.33333333333333" sap2010:WorkflowViewState.IdRef="If_4">
+        <If sap2010:Annotation.AnnotationText="ML Skill can be resumed only if it was stopped before." Condition="[in_MLSkillStatus.Equals(&quot;STOPPED&quot;)]" DisplayName="If - ML Skill is Stopped, then resume it" sap:VirtualizedContainerService.HintSize="530,802" sap2010:WorkflowViewState.IdRef="If_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <If.Then>
-            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,288.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,406" sap2010:WorkflowViewState.IdRef="Sequence_9">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -168,7 +169,7 @@
               </sap:WorkflowViewStateService.ViewState>
               <utam:MockActivity DisplayName="Mock API_SetMLSkillStatus_RESUME - Invoke Workflow File (API\API_SetMLSkillStatus_RESUME.xaml)" MockedActivityIdRef="InvokeWorkflowFile_6">
                 <utam:MockActivity.MockedActivity>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="API_SetMLSkillStatus_RESUME - Invoke Workflow File (API\API_SetMLSkillStatus_RESUME.xaml)" sap:VirtualizedContainerService.HintSize="354,200.66666666666666" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="API\API_SetMLSkillStatus_RESUME.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="API_SetMLSkillStatus_RESUME - Invoke Workflow File (API\API_SetMLSkillStatus_RESUME.xaml)" sap:VirtualizedContainerService.HintSize="434,210" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="API\API_SetMLSkillStatus_RESUME.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="in_AccessToken">[in_AccessToken]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_MLSKillId">[in_MLSkillId]</InArgument>
@@ -184,6 +185,14 @@
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;ML Skill would be resumed!&quot;]" />
                 </Sequence>
               </utam:MockActivity>
+              <Assign DisplayName="Assign - Status changed to RESUME" sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Assign_1">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Boolean">[out_StatusChanged]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                </Assign.Value>
+              </Assign>
             </Sequence>
           </If.Then>
           <If.Else>
@@ -198,10 +207,11 @@
           </If.Else>
         </If>
       </Sequence>
-      <Sequence x:Key="STOPPED" DisplayName="STOP ML Skill" sap:VirtualizedContainerService.HintSize="416,255.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_15">
+      <Sequence x:Key="STOPPED" DisplayName="STOP ML Skill" sap:VirtualizedContainerService.HintSize="416,25.333333333333332" sap2010:WorkflowViewState.IdRef="Sequence_15">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If sap2010:Annotation.AnnotationText="if ML Skill is already stopped, there is no need to stop it" Condition="[in_MLSkillStatus.Equals(&quot;STOPPED&quot;)]" DisplayName="If - ML Skill is already stopped" sap:VirtualizedContainerService.HintSize="354,102.66666666666667" sap2010:WorkflowViewState.IdRef="If_5">
@@ -243,7 +253,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <If.Then>
-            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,288.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_13">
+            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,406" sap2010:WorkflowViewState.IdRef="Sequence_13">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -251,7 +261,7 @@
               </sap:WorkflowViewStateService.ViewState>
               <utam:MockActivity DisplayName="Mock API_SetMLSkillStatus_STOPPED - Invoke Workflow File (API\API_SetMLSkillStatus_STOPPED.xaml)" MockedActivityIdRef="InvokeWorkflowFile_8">
                 <utam:MockActivity.MockedActivity>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="API_SetMLSkillStatus_STOPPED - Invoke Workflow File (API\API_SetMLSkillStatus_STOPPED.xaml)" sap:VirtualizedContainerService.HintSize="354,200.66666666666666" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="API\API_SetMLSkillStatus_STOPPED.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="API_SetMLSkillStatus_STOPPED - Invoke Workflow File (API\API_SetMLSkillStatus_STOPPED.xaml)" sap:VirtualizedContainerService.HintSize="434,210" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="API\API_SetMLSkillStatus_STOPPED.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="in_AccessToken">[in_AccessToken]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_MLSKillId">[in_MLSkillId]</InArgument>
@@ -267,6 +277,14 @@
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;ML Skill would be stopped!&quot;]" />
                 </Sequence>
               </utam:MockActivity>
+              <Assign DisplayName="Assign - Status changed to STOPPED" sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Boolean">[out_StatusChanged]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                </Assign.Value>
+              </Assign>
             </Sequence>
           </If.Then>
           <If.Else>

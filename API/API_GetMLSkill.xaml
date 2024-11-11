@@ -9,7 +9,7 @@
   <this:API_GetListFfMachines.in_AccessToken>
     <InArgument x:TypeArguments="x:String" />
   </this:API_GetListFfMachines.in_AccessToken>
-  <sap:VirtualizedContainerService.HintSize>1268.6666666666667,1152</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1356,1152</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -136,10 +136,10 @@
           <InArgument x:TypeArguments="x:String" x:Key="Authorization">[in_AccessToken]</InArgument>
         </ui:HttpClient.Headers>
         <ui:HttpClient.Parameters>
-          <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+          <InArgument x:TypeArguments="x:String" x:Key="name">[in_urlParamName]</InArgument>
         </ui:HttpClient.Parameters>
         <ui:HttpClient.UrlSegments>
-          <InArgument x:TypeArguments="x:String" x:Key="name">[in_urlParamName]</InArgument>
+          <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
         </ui:HttpClient.UrlSegments>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">

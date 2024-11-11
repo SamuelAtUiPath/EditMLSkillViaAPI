@@ -9,7 +9,7 @@
   <this:API_GetListFfMachines.in_MLSKillId>
     <InArgument x:TypeArguments="x:String" />
   </this:API_GetListFfMachines.in_MLSKillId>
-  <sap:VirtualizedContainerService.HintSize>1268.6666666666667,934.6666666666666</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1356,932.6666666666666</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -107,7 +107,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="API_SetMLSkillStatus_RESUME" sap:VirtualizedContainerService.HintSize="620.6666666666666,870" sap2010:WorkflowViewState.IdRef="Sequence_3">
+  <Sequence DisplayName="API_SetMLSkillStatus_RESUME" sap:VirtualizedContainerService.HintSize="620.6666666666666,868" sap2010:WorkflowViewState.IdRef="Sequence_3">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="StatusCode" />
       <Variable x:TypeArguments="x:String" Name="Response" />
@@ -119,7 +119,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="558.6666666666666,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;Setting ML Skill to Resume...&quot;]" />
-    <Sequence DisplayName="Set ML Skill status RESUME" sap:VirtualizedContainerService.HintSize="558.6666666666666,605.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence DisplayName="Set ML Skill status RESUME" sap:VirtualizedContainerService.HintSize="558.6666666666666,603.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -147,9 +147,9 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:HttpClient>
-      <Switch x:TypeArguments="x:Int32" DisplayName="Switch - Status Code" Expression="[StatusCode]" sap:VirtualizedContainerService.HintSize="496.6666666666667,360" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+      <Switch x:TypeArguments="x:Int32" DisplayName="Switch - Status Code" Expression="[StatusCode]" sap:VirtualizedContainerService.HintSize="496.6666666666667,358" sap2010:WorkflowViewState.IdRef="Switch`1_1">
         <Switch.Default>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Warn" Message="[&quot;Failed! &quot; + Environment.NewLine + &#xA;Response]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Warn" Message="[&quot;Failed RESUME ml skill! &quot; + Environment.NewLine + &#xD;&#xA;Response]" />
         </Switch.Default>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -157,7 +157,7 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:LogMessage x:Key="202" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Status 202! All good!&quot;]" />
+        <ui:LogMessage x:Key="202" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Status 202! All good RESUME ml skill!&quot;]" />
       </Switch>
     </Sequence>
   </Sequence>
