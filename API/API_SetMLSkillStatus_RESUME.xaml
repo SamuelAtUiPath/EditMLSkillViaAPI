@@ -107,7 +107,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="API_SetMLSkillStatus_RESUME" sap:VirtualizedContainerService.HintSize="620.6666666666666,868" sap2010:WorkflowViewState.IdRef="Sequence_3">
+  <Sequence DisplayName="API_SetMLSkillStatus_RESUME" sap:VirtualizedContainerService.HintSize="1042,775.3733333333332" sap2010:WorkflowViewState.IdRef="Sequence_3">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="StatusCode" />
       <Variable x:TypeArguments="x:String" Name="Response" />
@@ -118,14 +118,14 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="558.6666666666666,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;Setting ML Skill to Resume...&quot;]" />
-    <Sequence DisplayName="Set ML Skill status RESUME" sap:VirtualizedContainerService.HintSize="558.6666666666666,603.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530.6666666666666,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;Setting ML Skill to Resume...&quot;]" />
+    <Sequence DisplayName="Set ML Skill status RESUME" sap:VirtualizedContainerService.HintSize="530.6666666666666,386.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" sap2010:Annotation.AnnotationText="Set ML Skill status RESUME" AuthenticationType="None" Body="[&quot;{&quot;&quot;processor&quot;&quot;: &quot;&quot;CPU&quot;&quot;, &quot;&quot;deploymentsRequired&quot;&quot;: 1, &quot;&quot;gpuRequired&quot;&quot;: 0, &quot;&quot;publicSkill&quot;&quot;: false, &quot;&quot;autoUpdate&quot;&quot;: false, &quot;&quot;inactivityPeriodInDays&quot;&quot;: -1, &quot;&quot;replicas&quot;&quot;: 1, &quot;&quot;requestedCPU&quot;&quot;: 1.0, &quot;&quot;requestedMemory&quot;&quot;: 4}&quot;]" BodyFormat="application/json" DisplayName="HTTP Request - Set ML Skill status RESUME" EnableSSLVerification="True" EndPoint="[&quot;https://staging.uipath.com/universe/Earth/aifabric_/&quot; + &quot;ai-deployer/v1/mlskills/&quot; + in_MLSKillId + &quot;/&quot;]" sap:VirtualizedContainerService.HintSize="496.6666666666667,134.66666666666666" sap2010:WorkflowViewState.IdRef="HttpClient_2" Method="POST" ResponseHeaders="[Headers]" Result="[Response]" StatusCode="[StatusCode]" TimeoutMS="6000">
+      <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" sap2010:Annotation.AnnotationText="Set ML Skill status RESUME" AuthenticationType="None" Body="[&quot;{&quot;&quot;processor&quot;&quot;: &quot;&quot;CPU&quot;&quot;, &quot;&quot;deploymentsRequired&quot;&quot;: 1, &quot;&quot;gpuRequired&quot;&quot;: 0}&quot;]" BodyFormat="application/json" DisplayName="HTTP Request - Set ML Skill status RESUME" EnableSSLVerification="True" EndPoint="[&quot;https://staging.uipath.com/universe/Earth/aifabric_/&quot; + &quot;ai-deployer/v1/mlskills/&quot; + in_MLSKillId + &quot;/&quot;]" sap:VirtualizedContainerService.HintSize="496.6666666666667,134.66666666666666" sap2010:WorkflowViewState.IdRef="HttpClient_2" Method="POST" ResponseHeaders="[Headers]" Result="[Response]" StatusCode="[StatusCode]" TimeoutMS="6000">
         <ui:HttpClient.Attachments>
           <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
         </ui:HttpClient.Attachments>
@@ -147,9 +147,9 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:HttpClient>
-      <Switch x:TypeArguments="x:Int32" DisplayName="Switch - Status Code" Expression="[StatusCode]" sap:VirtualizedContainerService.HintSize="496.6666666666667,358" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+      <Switch x:TypeArguments="x:Int32" DisplayName="Switch - Status Code" Expression="[StatusCode]" sap:VirtualizedContainerService.HintSize="496.6666666666667,169.33333333333334" sap2010:WorkflowViewState.IdRef="Switch`1_1">
         <Switch.Default>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Warn" Message="[&quot;Failed RESUME ml skill! &quot; + Environment.NewLine + &#xD;&#xA;Response]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Warn" Message="[&quot;Failed RESUME ml skill! &quot; + Environment.NewLine + &#xA;Response]" />
         </Switch.Default>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">

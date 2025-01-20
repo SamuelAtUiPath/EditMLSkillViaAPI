@@ -21,7 +21,7 @@
       "Name": "in_MLSkillNewStatus",
       "DisplayName": "in_MLSkillNewStatus",
       "Category": null,
-      "Tooltip": null,
+      "Tooltip": "STOPPED or RESUME",
       "Placeholder": "STOPPED",
       "Widget": null,
       "IsRequired": false,

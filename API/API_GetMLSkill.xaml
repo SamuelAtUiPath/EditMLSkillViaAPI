@@ -107,7 +107,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="API_GetListOfMachines" sap:VirtualizedContainerService.HintSize="558,1087.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+  <Sequence DisplayName="API_GetListOfMachines" sap:VirtualizedContainerService.HintSize="1024.6666666666667,966" sap2010:WorkflowViewState.IdRef="Sequence_3">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="StatusCode" />
       <Variable x:TypeArguments="x:String" Name="Response" />
@@ -118,14 +118,14 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;Getting ML Skill Id by name...&quot;]" />
-    <Sequence DisplayName="Get ML Skill" sap:VirtualizedContainerService.HintSize="496,369.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="468,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;Getting ML Skill Id by name...&quot;]" />
+    <Sequence DisplayName="Get ML Skill" sap:VirtualizedContainerService.HintSize="468,341.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" sap2010:Annotation.AnnotationText="Get ML Skills" AuthenticationType="None" BodyFormat="application/xml" DisplayName="HTTP Request - Get ML Skills" EnableSSLVerification="True" EndPoint="[&quot;https://staging.uipath.com/universe/Earth/aifabric_/&quot; + &quot;ai-deployer/v1/mlskills&quot;]" sap:VirtualizedContainerService.HintSize="388,134.66666666666666" sap2010:WorkflowViewState.IdRef="HttpClient_2" Method="GET" ResponseHeaders="[Headers]" Result="[Response]" StatusCode="[StatusCode]" TimeoutMS="6000">
+      <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" sap2010:Annotation.AnnotationText="Get ML Skills" AuthenticationType="None" BodyFormat="application/xml" DisplayName="HTTP Request - Get ML Skills" EnableSSLVerification="True" EndPoint="[&quot;https://staging.uipath.com/universe/Earth/aifabric_/&quot; + &quot;ai-deployer/v1/mlskills&quot;]" sap:VirtualizedContainerService.HintSize="416,134.66666666666666" sap2010:WorkflowViewState.IdRef="HttpClient_2" Method="GET" ResponseHeaders="[Headers]" Result="[Response]" StatusCode="[StatusCode]" TimeoutMS="6000">
         <ui:HttpClient.Attachments>
           <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
         </ui:HttpClient.Attachments>
@@ -147,9 +147,9 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:HttpClient>
-      <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonSample="{x:Null}" DisplayName="Deserialize JSON - Get Sessions" sap:VirtualizedContainerService.HintSize="388,114.66666666666667" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_2" JsonObject="[out_MlSkillJson]" JsonString="[Response]" />
+      <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonSample="{x:Null}" DisplayName="Deserialize JSON - Get Sessions" sap:VirtualizedContainerService.HintSize="416,114.66666666666667" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_2" JsonObject="[out_MlSkillJson]" JsonString="[Response]" />
     </Sequence>
-    <Sequence DisplayName="Get ML Skill Id" sap:VirtualizedContainerService.HintSize="496,453.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <Sequence DisplayName="Get ML Skill Id" sap:VirtualizedContainerService.HintSize="468,425.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
