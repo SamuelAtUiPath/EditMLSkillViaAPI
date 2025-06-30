@@ -107,7 +107,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="API_SetMLSkillStatus_RESUME" sap:VirtualizedContainerService.HintSize="1042,775.3733333333332" sap2010:WorkflowViewState.IdRef="Sequence_3">
+  <Sequence DisplayName="API_SetMLSkillStatus_RESUME" sap:VirtualizedContainerService.HintSize="1024.6666666666667,586" sap2010:WorkflowViewState.IdRef="Sequence_3">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="StatusCode" />
       <Variable x:TypeArguments="x:String" Name="Response" />

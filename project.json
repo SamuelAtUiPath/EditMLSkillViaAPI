@@ -1,10 +1,11 @@
 {
-  "name": "EditMLSkill",
+  "name": "OrchestratorAPI-Demo",
   "projectId": "bf94fb84-71f5-4ee4-b371-d89ff4707ebd",
-  "description": "This process enables to schedule Maintenance sessions for machines",
+  "description": "Shows how to use Orchestrator APIs in RPA",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.23.4]",
+    "UiPath.GSuite.Activities": "[3.2.10]",
     "UiPath.Mail.Activities": "[1.23.1]",
     "UiPath.System.Activities": "[24.10.3]",
     "UiPath.Testing.Activities": "[23.10.0]",
@@ -41,50 +42,17 @@
       "privateWorkflows": []
     },
     "processOptions": {
-      "ignoredFiles": []
+      "ignoredFiles": [
+        "API/Audit/Get_OrgAuditLogs_OrchActivity_ERROR.xaml"
+      ]
     },
     "fileInfoCollection": [
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "fb9c6f9f-1ea4-4d04-b1ae-31d68a254fe5",
-        "testCaseType": "TestCase",
-        "executionTemplateInvokeIsolated": false,
-        "fileName": "API\\API_GetToken_TestCase.xaml"
-      },
       {
         "editingStatus": "InProgress",
         "testCaseId": "0929d3d6-0c3e-445b-b558-e4c012396cb0",
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
         "fileName": "Tests\\Main_TestCase.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "bb426e0d-b9d7-4eed-baa3-bbdb9553449b",
-        "testCaseType": "TestCase",
-        "executionTemplateInvokeIsolated": false,
-        "fileName": "API\\API_GetMLSkillsList_TestCase.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "cab4316e-dea7-414b-a3a1-4b53da72b8bc",
-        "testCaseType": "TestCase",
-        "executionTemplateInvokeIsolated": false,
-        "fileName": "API\\API_GetMLSkill_TestCase.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "f6a2e429-3c7a-4b7b-9e51-47018886d403",
-        "testCaseType": "TestCase",
-        "executionTemplateInvokeIsolated": false,
-        "fileName": "API\\API_SetMLSkillStatus_RESUME_TestCase.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "84d8158b-2c9e-4a05-965f-6362fe6d944e",
-        "testCaseType": "TestCase",
-        "executionTemplateInvokeIsolated": false,
-        "fileName": "API\\API_SetMLSkillStatus_STOPPED_TestCase.xaml"
       },
       {
         "editingStatus": "InProgress",
@@ -99,6 +67,69 @@
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
         "fileName": "Logic\\Logic_SwitchNewStatus_Mock_TestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "84d8158b-2c9e-4a05-965f-6362fe6d944e",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "API\\MLSkill\\API_SetMLSkillStatus_STOPPED_TestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "f6a2e429-3c7a-4b7b-9e51-47018886d403",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "API\\MLSkill\\API_SetMLSkillStatus_RESUME_TestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "fb9c6f9f-1ea4-4d04-b1ae-31d68a254fe5",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "API\\MLSkill\\API_GetToken_TestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "bb426e0d-b9d7-4eed-baa3-bbdb9553449b",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "API\\MLSkill\\API_GetMLSkillsList_TestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "cab4316e-dea7-414b-a3a1-4b53da72b8bc",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "API\\MLSkill\\API_GetMLSkill_TestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "b28a8ebd-93f6-4964-9e0e-4a10ce4ebd81",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "API\\Folders\\Get_Folders_TestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "01e683fb-477f-4164-8e1a-90b2f1edad29",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "API\\Audit\\Get_AuditLogs_TestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "d3379232-6623-4021-9d6d-373b6b19fe71",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "API\\Audit\\Get_AuditLogs_OrchActivity_TestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "9c904bc5-e803-497b-aa7f-144426dc3309",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "API\\Audit\\Get_OrgAuditLogs_TestCase.xaml"
       }
     ],
     "saveToCloud": false
